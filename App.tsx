@@ -1,11 +1,9 @@
-
 import React from 'react';
-import Header from './components/Header';
 import Section from './components/Section';
 import ModuleCard from './components/ModuleCard';
 import FlowDiagram from './components/FlowDiagram';
 import Footer from './components/Footer';
-import CreditDispute from './components/CreditDispute';
+import FinanceCockpit from './components/FinanceCockpit';
 
 const coreModules = [
   { name: 'InstrumentParser', description: 'Detects type (order vs bearer), parses endorsements' },
@@ -20,11 +18,19 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen text-[#1E2A3A] font-sans p-4 sm:p-8 md:p-12">
       <main className="max-w-5xl mx-auto space-y-16">
-        <Header />
+        <header className="text-center py-8">
+          <h1 className="font-bold text-4xl sm:text-5xl md:text-6xl tracking-wide uppercase">
+            Sovereign Finance Cockpit
+          </h1>
+        </header>
 
         <p className="text-center text-lg max-w-3xl mx-auto leading-relaxed">
           This modular, dialogic AI system interprets, endorses, and discharges negotiable instruments in compliance with lawful frameworks like the UCC and Bill of Exchange Act. It encodes sovereign remedy beyond automation.
         </p>
+
+        <Section title="Sovereign Finance Cockpit">
+          <FinanceCockpit />
+        </Section>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <Section title="Purpose">
@@ -79,10 +85,6 @@ const App: React.FC = () => {
 
         <Section title="System Flow">
             <FlowDiagram />
-        </Section>
-
-        <Section title="Credit Dispute Analysis">
-            <CreditDispute />
         </Section>
 
         <Footer />

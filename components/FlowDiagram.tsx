@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { GoogleGenAI } from "@google/genai";
 import EndorsementModal from './EndorsementModal';
@@ -49,7 +48,7 @@ const FlowDiagram: React.FC = () => {
 
     try {
       const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-      const prompt = `Explain a '${endorsementType}' endorsement on a negotiable instrument according to the UCC. What are its implications? Explain it clearly and concisely for someone studying sovereign remedy.`;
+      const prompt = `Explain a '${endorsementType}' endorsement on a negotiable instrument according to the UCC. What are its implications, and where is it physically placed on the instrument? Explain it clearly and concisely for someone studying sovereign remedy. When you reference a UCC section, please wrap it in square brackets, for example: [UCC §3-205].`;
       
       const response = await ai.models.generateContent({
         model: 'gemini-2.5-flash',
